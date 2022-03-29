@@ -30,29 +30,26 @@ class _UserListState extends State<UserList> {
         title: const Text('Lista de Usuarios'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: ListView.builder(
-            itemCount: lista.length,
-            itemBuilder: (context, index) {
-              return Card(
-                elevation: 5,
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                      lista[index].avatar.toString(),
-                    ),
-                  ),
-                  title: Text(
-                    lista[index].firstName.toString(),
-                  ),
-                  subtitle: Text(
-                    lista[index].email.toString(),
+      body: ListView.builder(
+          itemCount: lista.length,
+          itemBuilder: (context, index) {
+            return Card(
+              elevation: 5,
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    lista[index].avatar.toString(),
                   ),
                 ),
-              );
-            }),
-      ),
+                title: Text(
+                  lista[index].firstName.toString(),
+                ),
+                subtitle: Text(
+                  lista[index].email.toString(),
+                ),
+              ),
+            );
+          }),
     );
   }
 }

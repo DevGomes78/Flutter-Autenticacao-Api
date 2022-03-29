@@ -12,6 +12,7 @@ class ContainerWidget extends StatelessWidget {
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(90),
+
         ),
         gradient: LinearGradient(
           colors: [(Colors.blue), (Colors.black)],

@@ -46,20 +46,8 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Container(
-                alignment: Alignment.centerRight,
-                height: 30,
-                width: double.infinity,
-                child: const Text(
-                  'Esqueceu a senha? Clique aqui',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
+
+            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: InkWell(
@@ -75,7 +63,33 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Container(
+                alignment: Alignment.centerRight,
+                height: 30,
+                width: double.infinity,
+                child: InkWell(
+                  onTap: (){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                      Text(
+                        'Esqueceu a senha?  ',
+                        style: TextStyle(fontSize: 18,
+                            color: Colors.black),
+                      ),
+                      Text(
+                        'Clique aqui',
+                        style: TextStyle(fontSize: 18,
+                            color: Colors.blueAccent),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
