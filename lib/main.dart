@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:teste_bd_aut/views/home_page.dart';
 
+import 'components/splash.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      home:  HomePage(),
+      home: Splash(),
     );
   }
 }

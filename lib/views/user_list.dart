@@ -18,7 +18,6 @@ class _UserListState extends State<UserList> {
     UserController().GetUser().then((map) {
       setState(() {
         lista = map;
-        print(lista.length);
       });
     });
   }
@@ -29,27 +28,33 @@ class _UserListState extends State<UserList> {
       appBar: AppBar(
         title: const Text('Lista de Usuarios'),
         centerTitle: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50)
+        ),
       ),
-      body: ListView.builder(
-          itemCount: lista.length,
-          itemBuilder: (context, index) {
-            return Card(
-              elevation: 5,
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    lista[index].avatar.toString(),
+      body: RefreshIndicator(
+        onRefresh: UserController().GetUser,
+        child: ListView.builder(
+            itemCount: lista.length,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      lista[index].avatar.toString(),
+                    ),
+                  ),
+                  title: Text(
+                    lista[index].firstName.toString(),
+                  ),
+                  subtitle: Text(
+                    lista[index].email.toString(),
                   ),
                 ),
-                title: Text(
-                  lista[index].firstName.toString(),
-                ),
-                subtitle: Text(
-                  lista[index].email.toString(),
-                ),
-              ),
-            );
-          }),
+              );
+            }),
+      ),
     );
   }
 }
