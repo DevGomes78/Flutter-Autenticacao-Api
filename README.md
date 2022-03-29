@@ -1,6 +1,6 @@
-# teste_bd_aut
+#Flutter Autenicar Api
 
-A new Flutter project.
+Projeto para autenticar em uma Api e mostrar os dados em uma Listview,foi utilizado a dependencia http
 
 ## Getting Started
 
